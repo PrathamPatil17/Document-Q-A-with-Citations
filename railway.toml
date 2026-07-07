@@ -1,0 +1,32 @@
+# Railway project configuration.
+# Two services live in this repo:
+#   • backend  — FastAPI RAG API
+#   • frontend — Streamlit UI
+#
+# After importing the repo in Railway, create two services pointing at this
+# same repo and set their service names to "backend" and "frontend" so Railway
+# picks up the correct [[services]] block below.
+
+[build]
+builder = "NIXPACKS"
+
+[[services]]
+name = "backend"
+
+[services.build]
+buildCommand = "pip install -r requirements.txt"
+
+[services.deploy]
+startCommand = "bash start_backend.sh"
+healthcheckPath = "/health"
+healthcheckTimeout = 180        # allow extra time for model download on cold start
+
+[[services]]
+name = "frontend"
+
+[services.build]
+buildCommand = "pip install -r requirements.txt"
+
+[services.deploy]
+# Railway injects $PORT automatically; Streamlit must listen on it.
+startCommand = "streamlit run ui/app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true"
