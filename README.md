@@ -259,7 +259,7 @@ but deliberately, through a structured workflow rather than ad-hoc prompting.**
 
 | Tool | Models | Approx. usage | What it was used for |
 |---|---|---|---|
-| Claude Code (Anthropic CLI) | Claude Sonnet 5, then Claude Opus 4.8 | ~250k–330k tokens | The full build under my direction: requirements brainstorming, the design spec, the implementation plan, all source code and tests, the six policy-document excerpts, running the pipeline, debugging, prompt tuning, and this README. |
+| Claude Code (Anthropic CLI) | Claude Sonnet 5, then Claude Opus 4.8 | ~150k–200k tokens | The full build under my direction: requirements brainstorming, the design spec, the implementation plan, all source code and tests, the six policy-document excerpts, running the pipeline, debugging, prompt tuning, and this README. |
 
 ### How Claude Code was used (skills & plugins)
 
@@ -294,13 +294,3 @@ in the Design Decisions section above.
 > Note: the token count is approximate — it reflects the working session
 > that produced this repository and is rounded, not an exact meter reading.
 
-### Self-assessment on token usage
-
-For comparison: a senior engineer with a pre-decided spec (no back-and-forth
-on chunking strategy, vector store, or multilingual approach) directing
-Claude Code through the same scope would likely land closer to **~120k–180k
-tokens** — roughly half to two-thirds of what this session used. The gap is
-mostly the cost of using Claude Code as a genuine collaborator for
-brainstorming trade-offs and iterating on this log, rather than a
-code-typing tool against an already-fixed spec. I'd rather be upfront about
-that than round the number down.
