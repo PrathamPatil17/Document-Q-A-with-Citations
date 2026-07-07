@@ -27,6 +27,13 @@ headings so citations can reference a section, not just a byte offset.
 
 ---
 
+## Demo Video
+
+A walkthrough of this project is available here:  
+https://www.loom.com/share/f2f210725e224b3686c7e1ea91b38847
+
+---
+
 ## How to run it
 
 Requires **Python 3.10+** (the code uses `str | None` union syntax).
